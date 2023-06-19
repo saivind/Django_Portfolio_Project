@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+                              <head>
+                                                            <meta charset="utf-8">
+                                                            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                                                            <title></title>
+                                                            <meta name="description" content="">
+                                                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                                                            <link rel="stylesheet" href="">
+                              </head>
+                              <style>
+                                
+                                h1 {
+                                  text-align: center;
+                                  color: rgba(243, 131, 2, 0.63);
+                                  text-shadow: 1px 4px 10px rgba(228, 194, 4, 0.938), 0 0 25px rgb(255, 209, 3), 0 0 5px rgb(255, 176, 5);
+                                }
+                                form {
+                                                              text-align: center;
+                                                              color: Black;
+                                }
+                                h3 {
+                                                              text-align: center;
+                                                              color: grey;
+                                }
+                                /* button {
+
+                                } */
+                              </style>
+</head>
+                              <body>
+                                                            {% block content %}
+                                                            <!-- Page Heading -->
+                                                            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 100px;">
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                <h1 class="h3 mb-0 text-gray-800">The Noble Price Search</h1>
+                                                              <br>
+                                                            </div>
+                                                            <div  style="text-align: center;">
+                                                              {% if messages %}
+                                                                <ul class="messages" style="text-align: center; height:40px; width:auto; font-size:16px">
+                                                                    {% for message in messages %}
+                                                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                              {% endif %}
+                                                            </div>                                                            
+                                                            <form name= "search_info_form" method="post" class="bootstrap5" style="margin-left: 5%" action="{% url 'portfolio:info_NP' %}">
+                                                                {% csrf_token %}
+                                                                
+                                                                 
+                                                                    
+                                                                {{ form.as_p }}
+                                                                {{ form.errors }}
+                                                                {% comment %} {% for message in messages %}
+                                                                    <p id="messages">{{message}}</p>
+                                                                {% endfor %} {% endcomment %}
+                                                                <br>
+                                                                <button type="submit" name="submit" style="margin-left: 10px; height:40px; width:auto; font-size:16px; border-radius: 10px;" text-align="center;" padding="35px 52px;" class="btn btn-outline-secondary btn-sm">Search</button>
+                                                            </form>
+                                                            
+                                                            {% endblock %}
+
+                                                            {% comment %} <!-- Page Heading -->
+                                                            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin-left: 100px;">
+                                                            <h1 class="h3 mb-0 text-gray-800"> The Noble Price </h1>
+                                                            
+                                                            </div>
+
+                                                            <div>
+                                                            <div>
+                                                                                          <!--form method = "GET"!-->
+                                                                                                                        {{ form }}
+                                                                                                                        <button type="submit" name="Submit" class="btn btn-outline-secondary" style="margin-left: 0px;" >Search</button> {% endcomment %}
+                                                                                          <!--/form!-->
+                                                            <!--form name="api_np" style="margin-left: 100px;"  border-radius=35px; action="{% url 'portfolio:info_NP' %}" method="post" enctype="multipart/form-data" class="form-label"!-->
+                                                            
+                              </body>
+</html>
