@@ -10,7 +10,7 @@ choices_NP = (
                               ("phy","Physics"),
                               ("med","Physiology or Medicin"),
 )
-# creating a form 
+# creating a form to display in html page
 class search_info_form(forms.Form):
                               search_info_fld = forms.ChoiceField(choices = choices_NP, label='Category', initial='Choose a Category to search')
                               year_search = forms.IntegerField(label='Year', initial= 'ex: 1983')
