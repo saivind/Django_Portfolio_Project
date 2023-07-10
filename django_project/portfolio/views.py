@@ -26,7 +26,7 @@ def abbrivate_category(obj):
                               elif obj == "med": return "Physiology or Medicin"                   
 
 
-
+# Landing page
 def home(request):
     return render(request, 'home.html')
 
